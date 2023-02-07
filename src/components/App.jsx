@@ -66,7 +66,7 @@ const App = () => {
       )}
       {error && <p>{error}</p>}
 
-      {Boolean(images.length) && (
+      {Boolean(images.length) && !isLoading && (
         <Button text="Load more" clickHandler={loadMore} />
       )}
 
@@ -76,11 +76,11 @@ const App = () => {
           width="80"
           color="#4fa94d"
           ariaLabel="circles-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
+          wrapperStyle={{ margin: '0 auto' }}
+          wrapperClass="loading"
         />
       )}
+
       {showModal && (
         <Modal close={closeModal}>
           <ImageDeteils {...currentImage} />
